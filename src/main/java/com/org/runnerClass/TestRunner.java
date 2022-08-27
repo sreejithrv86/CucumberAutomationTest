@@ -12,6 +12,6 @@ public class TestRunner {
 
 	 public static void main(String[] args) {
 	        Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
-	        cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
+	        io.cucumber.core.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
 }
