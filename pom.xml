@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>TestAutomationFramework</groupId>
 	<artifactId>CucumberAutomationTest</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<description>TestAutomation	</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -12,6 +12,7 @@
 		<cucumber.version>7.5.0</cucumber.version>
 		<testng.version>7.5</testng.version>
 		<log4j.version>1.2.17</log4j.version>
+		<junit.jupiter.api.version>5.9.0</junit.jupiter.api.version>
 		<cucumber.jvm.deps.version>1.0.6</cucumber.jvm.deps.version>
 		<cucumber.reporting.version>5.7.2</cucumber.reporting.version>
 		<cucumber.html.version>0.2.7</cucumber.html.version>
@@ -93,6 +94,16 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+		<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>${junit.jupiter.api.version}</version>
+</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -117,6 +128,8 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
+					<finalName>${project.artifactId}-${project.version}</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
 					<archive>
 						<manifest>
 							<mainClass>com.org.runnerClass.TestRunner</mainClass>
