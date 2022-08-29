@@ -6,11 +6,15 @@ public class TestRunner {
 	
 	 private static String[] defaultOptions = {
 	            "--glue", "com.org.stepDefClass",
+	            "--plugin", "json:report/cucumber/cucumber_report.json",
+	            "--plugin", "html:report/cucumber/cucumber_html_report.html",
 	            "--plugin", "pretty",
-	            "--plugin", "json:cucumber.json"
+	            "--monochrome"
+	            
 	    };
 
 	 public static void main(String[] args) {
+		  
 	        Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 	        io.cucumber.core.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	    }
