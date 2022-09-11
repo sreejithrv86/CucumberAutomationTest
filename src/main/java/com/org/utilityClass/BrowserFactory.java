@@ -18,11 +18,11 @@ public class BrowserFactory {
     
 	// create a webdriver object for a given browser
 	@SuppressWarnings("deprecation")
-	public WebDriver createBrowserInstance(Boolean headLess) {
+	public WebDriver createBrowserInstance(String browserName, Boolean headLess) {
 		WebDriver driver = null;
 		DesiredCapabilities cap = null;
 		try {
-		switch (System.getProperty("browsername").toLowerCase()) {
+		switch (browserName) {
 		case "chrome":
 		case "googlechrome":
 		case "google chrome":

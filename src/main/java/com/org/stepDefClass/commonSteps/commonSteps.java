@@ -1,4 +1,4 @@
-package com.org.stepDefClass;
+package com.org.stepDefClass.commonSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
