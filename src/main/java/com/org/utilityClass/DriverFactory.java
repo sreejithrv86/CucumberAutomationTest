@@ -25,8 +25,9 @@ public class DriverFactory {
 	}
 
 	public void clearBrowser() {
-		driver.get().close();
+		driver.get().quit();
 		driver.remove();
+		
 	}
 
 }

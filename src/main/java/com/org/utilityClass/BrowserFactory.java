@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import java.time.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserFactory {
@@ -70,7 +70,9 @@ public class BrowserFactory {
 			driver = new EdgeDriver(edgeOptions);
 			break;
 		}
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 		}
 		catch (Exception e) {
 			// TODO: handle exception

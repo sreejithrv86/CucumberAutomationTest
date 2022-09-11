@@ -3,17 +3,39 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2022-08-29T15:07:44.746Z",
+        "start_timestamp": "2022-09-11T18:59:51.517Z",
+        "before": [
+          {
+            "result": {
+              "duration": 10787633700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.org.stepDefClass.Hooks.tearUp()"
+            }
+          }
+        ],
         "line": 4,
         "name": "Login Functionality",
         "description": "",
         "id": "login;login-functionality",
+        "after": [
+          {
+            "result": {
+              "duration": 316006000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.org.stepDefClass.Hooks.teardDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 2007200,
+              "duration": 986300,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 1002900,
+              "duration": 1008400,
               "status": "passed"
             },
             "line": 6,
@@ -47,7 +69,7 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 993400,
               "status": "passed"
             },
             "line": 7,
