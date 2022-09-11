@@ -1,0 +1,75 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-08-29T15:07:44.746Z",
+        "line": 4,
+        "name": "Login Functionality",
+        "description": "",
+        "id": "login;login-functionality",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2007200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user navigates to the website javatpoint.com",
+            "match": {
+              "location": "com.org.stepDefClass.commonSteps.user_navigates_to_the_website_javatpoint_com()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1002900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "there user logs in through Login Window by using Username as \"SREEJITH\" and Password as \"PASSWORD\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"SREEJITH\"",
+                  "offset": 61
+                },
+                {
+                  "val": "\"PASSWORD\"",
+                  "offset": 88
+                }
+              ],
+              "location": "com.org.stepDefClass.commonSteps.there_user_logs_in_through_login_window_by_using_username_as_and_password_as(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "login must be successful",
+            "match": {
+              "location": "com.org.stepDefClass.commonSteps.login_must_be_successful()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@TEST-0001"
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "classpath:features/profile/Login.feature",
+    "tags": []
+  }
+]
