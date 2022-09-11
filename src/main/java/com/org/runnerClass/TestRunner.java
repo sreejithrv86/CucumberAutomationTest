@@ -2,10 +2,10 @@ package com.org.runnerClass;
 
 import java.util.stream.Stream;
 
-public class TestRunner {
+public class TestRunner{
 	
 	 private static String[] defaultOptions = {
-	            "--glue", "com.org.stepDefClass",
+	            "--glue", "com/org/stepDefClass",
 	            "--plugin", "json:report/cucumber/cucumber_report.json",
 	            "--plugin", "html:report/cucumber/cucumber_html_report.html",
 	            "--plugin", "pretty",
