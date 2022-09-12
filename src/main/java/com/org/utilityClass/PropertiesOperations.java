@@ -11,8 +11,11 @@ public class PropertiesOperations {
 
 	public static String getPropertyValueByKey(String key, String application, String env) {
 		String value = "";
+		String baseDir = "";
+		String propFilePath = "";
 		try {
-			String propFilePath = System.getProperty("user.dir")+"\\src\\main\\resources\\properties\\"+application+"_"+env+".properties";
+			baseDir = System.getProperty("user.dir").replace("\\target", "");
+			propFilePath = baseDir+"\\src\\main\\resources\\properties\\"+application+"_"+env+".properties";
 			prop.load(new FileInputStream(propFilePath));
 			value = prop.get(key).toString();
 			if ((value.equals("") || 
