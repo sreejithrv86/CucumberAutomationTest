@@ -6,19 +6,19 @@ import io.cucumber.java.en.When;
 import org.junit.jupiter.api.*;
 
 import com.org.pageClass.browseClass.LoginPage;
-import com.org.stepDefClass.commonStepClass.commonSteps;
+import com.org.stepDefClass.commonSteps;
 import com.org.utilityClass.TestContext;
 
 import java.util.List;
 import java.util.Map;
 
-public class LoginSteps extends commonSteps {
+public class LoginSteps extends commonSteps{
 	
 	TestContext testContext;
     LoginPage loginPage;
     
-    public LoginSteps(TestContext context) {
-        testContext = context;
+    public LoginSteps(TestContext testContext) {
+        super(testContext);
         loginPage = testContext.getPageObjectManager().getLoginPage();
     }
     

@@ -1,4 +1,4 @@
-package com.org.stepDefClass.commonStepClass;
+package com.org.stepDefClass;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

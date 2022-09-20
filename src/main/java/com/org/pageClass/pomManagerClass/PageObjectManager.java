@@ -1,6 +1,7 @@
 package com.org.pageClass.pomManagerClass;
 import org.openqa.selenium.WebDriver;
 
+import com.org.pageClass.CommonClass.CommonPage;
 import com.org.pageClass.browseClass.HomePage;
 import com.org.pageClass.browseClass.LoginPage;
 import com.org.pageClass.browseClass.ProductDetailPage;
@@ -12,6 +13,7 @@ public class PageObjectManager {
 	    private LoginPage loginPage;
 	    private ProductListPage productListPage;
 	    private ProductDetailPage productDetailPage;
+	    private CommonPage commonPage;
 
 	    public PageObjectManager(WebDriver webDriver) {
 	        this.webDriver = webDriver;
@@ -32,5 +34,7 @@ public class PageObjectManager {
 	    public ProductDetailPage getProductDetailPage() {
 	    	 return (productDetailPage == null) ? productDetailPage = new ProductDetailPage(webDriver) : productDetailPage;
 	    }
-
+	    public CommonPage getCommonPage() {
+	    	 return (commonPage == null) ? commonPage = new CommonPage(webDriver) : commonPage;
+	    }
 }

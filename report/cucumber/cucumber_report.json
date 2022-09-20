@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2022-09-11T18:59:51.517Z",
+        "start_timestamp": "2022-09-20T17:28:29.139Z",
         "before": [
           {
             "result": {
-              "duration": 10787633700,
+              "duration": 13153469100,
               "status": "passed"
             },
             "match": {
@@ -22,11 +22,11 @@
         "after": [
           {
             "result": {
-              "duration": 316006000,
+              "duration": 779994200,
               "status": "passed"
             },
             "match": {
-              "location": "com.org.stepDefClass.Hooks.teardDown()"
+              "location": "com.org.stepDefClass.Hooks.teardDown(io.cucumber.java.Scenario)"
             }
           }
         ],
@@ -35,19 +35,19 @@
         "steps": [
           {
             "result": {
-              "duration": 986300,
+              "duration": 144002300,
               "status": "passed"
             },
             "line": 5,
             "name": "user navigates to the website javatpoint.com",
             "match": {
-              "location": "com.org.stepDefClass.commonSteps.user_navigates_to_the_website_javatpoint_com()"
+              "location": "com.org.stepDefClass.browserStepClass.ProductListSteps.user_navigates_to_the_website_javatpoint_com()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1008400,
+              "duration": 3003200,
               "status": "passed"
             },
             "line": 6,
@@ -63,19 +63,19 @@
                   "offset": 88
                 }
               ],
-              "location": "com.org.stepDefClass.commonSteps.there_user_logs_in_through_login_window_by_using_username_as_and_password_as(java.lang.String,java.lang.String)"
+              "location": "com.org.stepDefClass.browserStepClass.ProductListSteps.there_user_logs_in_through_login_window_by_using_username_as_and_password_as(java.lang.String,java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 993400,
+              "duration": 1007300,
               "status": "passed"
             },
             "line": 7,
             "name": "login must be successful",
             "match": {
-              "location": "com.org.stepDefClass.commonSteps.login_must_be_successful()"
+              "location": "com.org.stepDefClass.browserStepClass.ProductListSteps.login_must_be_successful()"
             },
             "keyword": "Then "
           }

@@ -4,17 +4,18 @@ import org.junit.jupiter.api.Assertions;
 
 import com.org.enums.Context;
 import com.org.pageClass.browseClass.ProductDetailPage;
+import com.org.stepDefClass.commonSteps;
 import com.org.utilityClass.TestContext;
 
 import io.cucumber.java.en.Then;
 
-public class ProductDetailSteps {
+public class ProductDetailSteps extends commonSteps{
 	
 	TestContext testContext;
     ProductDetailPage productDetailPage;
 
-    public ProductDetailSteps(TestContext context) {
-        testContext = context;
+    public ProductDetailSteps(TestContext testContext) {
+    	super(testContext);
         productDetailPage = testContext.getPageObjectManager().getProductDetailPage();
     }
 

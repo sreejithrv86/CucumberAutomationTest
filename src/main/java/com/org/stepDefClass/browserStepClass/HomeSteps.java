@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.*;
 import com.org.pageClass.browseClass.HomePage;
-import com.org.stepDefClass.commonStepClass.commonSteps;
+import com.org.stepDefClass.commonSteps;
 import com.org.utilityClass.TestContext;
 
 public class HomeSteps extends commonSteps{
@@ -12,8 +12,8 @@ public class HomeSteps extends commonSteps{
     HomePage homePage;
     TestContext testContext;
 
-    public HomeSteps(TestContext context) {
-        testContext = context;
+    public HomeSteps(TestContext testContext) {
+    	super(testContext);
         homePage = testContext.getPageObjectManager().getHomePage();
     }
 
