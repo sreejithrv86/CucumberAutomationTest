@@ -32,7 +32,7 @@ public class ProductDetailSteps {
         }
 
         String actualBreadcrumbName = productDetailPage.getAllBreadcrumbName(3).toLowerCase();
-        String expectedBreadcrumbName = testContext.getScenarioContext().getContext(Context.EXPECTED_DATA).toString().toLowerCase();
+        String expectedBreadcrumbName = testContext.getScenarioContext().getData(Context.EXPECTED_DATA).toString().toLowerCase();
         Assertions.assertTrue(actualBreadcrumbName.contains(expectedBreadcrumbName));
 
         Assertions.assertTrue(productDetailPage.moreBreadcrumbIsDisplayed());

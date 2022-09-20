@@ -6,12 +6,12 @@ import com.org.utilityClass.DriverFactory;
 public class TestContext {
 
     private final PageObjectManager pageObjectManager;
-    private final ScenarioContext scenarioContext;
+    private final ScenarioFactory scenarioContext;
     private final DriverFactory driverManager;
     
     public TestContext() {
         pageObjectManager = new PageObjectManager(DriverFactory.getInstance().getDriver());
-        scenarioContext = new ScenarioContext();
+        scenarioContext = ScenarioFactory.getInstance();
         driverManager = DriverFactory.getInstance();
     }
 
@@ -19,7 +19,7 @@ public class TestContext {
         return pageObjectManager;
     }
 
-    public ScenarioContext getScenarioContext() {
+    public ScenarioFactory getScenarioContext() {
         return scenarioContext;
     }
     
