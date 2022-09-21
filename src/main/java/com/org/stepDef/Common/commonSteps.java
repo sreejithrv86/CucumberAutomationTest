@@ -6,14 +6,12 @@ import java.util.Map;
 import com.org.generic.Enums.Context;
 import com.org.generic.Enums.StoreValues;
 import com.org.generic.Utility.TestContext;
-import com.org.page.Common.CommonPage;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class commonSteps {
-	CommonPage commonPage;
     TestContext testContext;
     
 	public commonSteps(TestContext context) {

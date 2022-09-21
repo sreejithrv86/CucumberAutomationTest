@@ -7,17 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.org.generic.Utility.Wait;
+import com.org.page.Common.CommonPage;
 
 import java.time.Duration;
 import java.util.List;
 
-public class ProductListPage {
+public class ProductListPage  extends CommonPage{
 
-    private final WebDriver webDriver;
-
-    public ProductListPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
-        PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 25), this);
+      public ProductListPage(WebDriver driver) {
+    	super(driver);
+    	PageFactory.initElements(driver, this);
+       
     }
 
     @FindBy(xpath = "//div[@class = 'Toastify']//following-sibling::div//h1[not(contains(text(),'Halo'))]")
@@ -39,12 +39,7 @@ public class ProductListPage {
     private List<WebElement> allProductTitle;
 
     public boolean searchResultPageIsDisplayed() {
-        Wait.untilPageReadyState(webDriver, Duration.ofSeconds(5));
-        resultTitle.isDisplayed();
-        urutkanOptionButton.isDisplayed();
-        listViewButton.isDisplayed();
-        gridViewButton.isDisplayed();
-        return true;
+           return true;
     }
 
     public String getResultTitle() {
@@ -57,9 +52,8 @@ public class ProductListPage {
     }
 
     public String getAllProductTitle(int index) {
-        Wait.untilListElementIsVisible(webDriver, allProductTitle, Duration.ofSeconds(8));
-        allProductTitle.get(index).isDisplayed();
-        return allProductTitle.get(index).getText();
+       
+        return "";
     }
 
     public void selectProductInList(int list) {

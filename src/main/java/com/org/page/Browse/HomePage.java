@@ -7,11 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class HomePage {
+import com.org.page.Common.CommonPage;
 
-    public HomePage(WebDriver webDriver) {
-        PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 15), this);
-    }
+public class HomePage extends CommonPage{
 
     @FindBy(xpath = "//header//img[@alt='Bhinneka.com']//parent::a")
     private WebElement headerLogoButton;
@@ -33,7 +31,11 @@ public class HomePage {
 
     @FindBy(xpath = "//*[invalid locators]")
     private WebElement invalidLocators;
-
+    
+    public HomePage(WebDriver driver) {
+    	super(driver);
+    	PageFactory.initElements(driver, this);
+    }
     public boolean defaultHomePageIsDisplayed() {
         headerLogoButton.isDisplayed();
         searchInput.isDisplayed();

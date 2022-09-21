@@ -24,12 +24,11 @@ public class Hooks extends commonSteps{
     }
     
     @Before
-	public void tearUp() throws InterruptedException {
+	public void tearUp(Scenario scenario) {
 	
 		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(Browser.getBrowserName(), false));
 		DriverFactory.getInstance().getDriver().get(PropertiesOperations.getPropertyValueByKey("application.url", Application.getApplicationName(),
 				Environment.getEnvironmentName()));
-		Thread.sleep(5000);
 		
 	}
 	

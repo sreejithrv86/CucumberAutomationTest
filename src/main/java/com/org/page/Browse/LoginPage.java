@@ -6,11 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class LoginPage {
+import com.org.page.Common.CommonPage;
 
-    public LoginPage(WebDriver webDriver) {
-    	PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 15), this);
-    }
+public class LoginPage  extends CommonPage{
 
     @FindBy(className = "bt-split-screen__header")
     private WebElement loginHeaderTitle;
@@ -32,6 +30,11 @@ public class LoginPage {
 
     @FindBy(xpath = "//a[@href='/register']")
     private WebElement registerLink;
+    
+    public LoginPage(WebDriver driver) {
+    	super(driver);
+    	PageFactory.initElements(driver, this);
+    }
 
     public boolean emailLoginPageIsDisplayed() {
         loginHeaderTitle.isDisplayed();
