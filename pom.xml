@@ -130,7 +130,7 @@
 					<appendAssemblyId>false</appendAssemblyId>
 					<archive>
 						<manifest>
-							<mainClass>com.org.runnerClass.TestRunner</mainClass>
+							<mainClass>com.org.TestRunner.TestRunner</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
