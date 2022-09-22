@@ -12,55 +12,53 @@ import com.org.page.Common.CommonPage;
 import java.time.Duration;
 import java.util.List;
 
-public class ProductListPage  extends CommonPage{
+public class ProductListPage extends CommonPage {
 
-      public ProductListPage(WebDriver driver) {
-    	super(driver);
-    	PageFactory.initElements(driver, this);
-       
-    }
+	public ProductListPage(WebDriver driver) {
+		super(driver);
+	}
 
-    @FindBy(xpath = "//div[@class = 'Toastify']//following-sibling::div//h1[not(contains(text(),'Halo'))]")
-    private WebElement resultTitle;
+	@FindBy(xpath = "//div[@class = 'Toastify']//following-sibling::div//h1[not(contains(text(),'Halo'))]")
+	private WebElement resultTitle;
 
-    @FindBy(className = "select-wrapper")
-    private WebElement urutkanOptionButton;
+	@FindBy(className = "select-wrapper")
+	private WebElement urutkanOptionButton;
 
-    @FindBy(xpath = "//i[@name='property']//parent::button")
-    private WebElement listViewButton;
+	@FindBy(xpath = "//i[@name='property']//parent::button")
+	private WebElement listViewButton;
 
-    @FindBy(xpath = "//i[@name='grid-view']//parent::button")
-    private WebElement gridViewButton;
+	@FindBy(xpath = "//i[@name='grid-view']//parent::button")
+	private WebElement gridViewButton;
 
-    @FindBy(xpath = "//div[@class='product-title']//parent::div//parent::a")
-    private List<WebElement> allProductList;
+	@FindBy(xpath = "//div[@class='product-title']//parent::div//parent::a")
+	private List<WebElement> allProductList;
 
-    @FindBy(xpath = "//div[@class='product-title']//p")
-    private List<WebElement> allProductTitle;
+	@FindBy(xpath = "//div[@class='product-title']//p")
+	private List<WebElement> allProductTitle;
 
-    public boolean searchResultPageIsDisplayed() {
-           return true;
-    }
+	public boolean searchResultPageIsDisplayed() {
+		return true;
+	}
 
-    public String getResultTitle() {
-        resultTitle.isDisplayed();
-        return resultTitle.getText();
-    }
+	public String getResultTitle() {
+		resultTitle.isDisplayed();
+		return resultTitle.getText();
+	}
 
-    public String getProductAmount() {
-        return String.valueOf(allProductList.size());
-    }
+	public String getProductAmount() {
+		return String.valueOf(allProductList.size());
+	}
 
-    public String getAllProductTitle(int index) {
-       
-        return "";
-    }
+	public String getAllProductTitle(int index) {
 
-    public void selectProductInList(int list) {
-        int index = list - 1;
+		return "";
+	}
 
-        allProductList.get(index).isDisplayed();
-        allProductList.get(index).isEnabled();
-        allProductList.get(index).click();
-    }
+	public void selectProductInList(int list) {
+		int index = list - 1;
+
+		allProductList.get(index).isDisplayed();
+		allProductList.get(index).isEnabled();
+		allProductList.get(index).click();
+	}
 }

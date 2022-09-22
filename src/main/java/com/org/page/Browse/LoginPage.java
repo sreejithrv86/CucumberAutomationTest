@@ -8,63 +8,62 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.org.page.Common.CommonPage;
 
-public class LoginPage  extends CommonPage{
+public class LoginPage extends CommonPage {
 
-    @FindBy(className = "bt-split-screen__header")
-    private WebElement loginHeaderTitle;
+	@FindBy(className = "bt-split-screen__header")
+	private WebElement loginHeaderTitle;
 
-    @FindBy(id = "email")
-    private WebElement emailField;
+	@FindBy(id = "email")
+	private WebElement emailField;
 
-    @FindBy(id = "next")
-    private WebElement selanjutnyaButton;
+	@FindBy(id = "next")
+	private WebElement selanjutnyaButton;
 
-    @FindBy(xpath = "//div[@class='bt-social-group']//button[1]")
-    private WebElement loginFacebookButton;
+	@FindBy(xpath = "//div[@class='bt-social-group']//button[1]")
+	private WebElement loginFacebookButton;
 
-    @FindBy(id = "btnGoogle")
-    private WebElement loginGoogleButton;
+	@FindBy(id = "btnGoogle")
+	private WebElement loginGoogleButton;
 
-    @FindBy(className = "bt-question-register")
-    private WebElement registerQuestionText;
+	@FindBy(className = "bt-question-register")
+	private WebElement registerQuestionText;
 
-    @FindBy(xpath = "//a[@href='/register']")
-    private WebElement registerLink;
-    
-    public LoginPage(WebDriver driver) {
-    	super(driver);
-    	PageFactory.initElements(driver, this);
-    }
+	@FindBy(xpath = "//a[@href='/register']")
+	private WebElement registerLink;
 
-    public boolean emailLoginPageIsDisplayed() {
-        loginHeaderTitle.isDisplayed();
-        emailField.isDisplayed();
-        selanjutnyaButton.isDisplayed();
-        loginFacebookButton.isDisplayed();
-        loginGoogleButton.isDisplayed();
-        registerQuestionText.isDisplayed();
-        registerLink.isDisplayed();
-        return true;
-    }
+	public LoginPage(WebDriver driver) {
+		super(driver);
+	}
 
-    public String getLoginHeaderTitle() {
-        loginHeaderTitle.isDisplayed();
-        return loginHeaderTitle.getText();
-    }
+	public boolean emailLoginPageIsDisplayed() {
+		loginHeaderTitle.isDisplayed();
+		emailField.isDisplayed();
+		selanjutnyaButton.isDisplayed();
+		loginFacebookButton.isDisplayed();
+		loginGoogleButton.isDisplayed();
+		registerQuestionText.isDisplayed();
+		registerLink.isDisplayed();
+		return true;
+	}
 
-    public String getQuestionRegisterText() {
-        registerQuestionText.isDisplayed();
-        return registerQuestionText.getText();
-    }
+	public String getLoginHeaderTitle() {
+		loginHeaderTitle.isDisplayed();
+		return loginHeaderTitle.getText();
+	}
 
-    public void fillEmailData(String email) {
-        emailField.isEnabled();
-        emailField.clear();
-        emailField.sendKeys(email);
-    }
+	public String getQuestionRegisterText() {
+		registerQuestionText.isDisplayed();
+		return registerQuestionText.getText();
+	}
 
-    public void clickSelanjutnyaButton() {
-        selanjutnyaButton.isEnabled();
-        selanjutnyaButton.click();
-    }
+	public void fillEmailData(String email) {
+		emailField.isEnabled();
+		emailField.clear();
+		emailField.sendKeys(email);
+	}
+
+	public void clickSelanjutnyaButton() {
+		selanjutnyaButton.isEnabled();
+		selanjutnyaButton.click();
+	}
 }
