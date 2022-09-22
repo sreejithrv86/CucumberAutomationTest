@@ -11,35 +11,34 @@ import com.org.page.Common.CommonPage;
 import java.time.Duration;
 import java.util.List;
 
-public class ProductDetailPage  extends CommonPage{
+public class ProductDetailPage extends CommonPage {
 
-    public ProductDetailPage(WebDriver driver) {
-    	super(driver);
-        PageFactory.initElements(driver, this);
-    }
+	public ProductDetailPage(WebDriver driver) {
+		super(driver);
+	}
 
-    public boolean defaultProductDetailPageIsDisplayed() {
-       
-        return true;
-    }
+	public boolean defaultProductDetailPageIsDisplayed() {
 
-    public boolean nonFisikProductDetailDataIsDisplayed() {
-       
-        return true;
-    }
+		return true;
+	}
 
-    public boolean fisikProductDetailDataIsDisplayed() {
-        
-        return true;
-    }
+	public boolean nonFisikProductDetailDataIsDisplayed() {
 
-    public String getAllBreadcrumbName(int index) {
-        
-        return "";
-    }
+		return true;
+	}
 
-    public boolean moreBreadcrumbIsDisplayed() {
-        
-        return true;
-    }
+	public boolean fisikProductDetailDataIsDisplayed() {
+
+		return true;
+	}
+
+	public String getAllBreadcrumbName(int index) {
+
+		return "";
+	}
+
+	public boolean moreBreadcrumbIsDisplayed() {
+
+		return true;
+	}
 }

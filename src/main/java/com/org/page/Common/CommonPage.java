@@ -11,7 +11,7 @@ public class CommonPage {
 	
 	public CommonPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
+		PageFactory.initElements(driver, this);
     }
 
 }
