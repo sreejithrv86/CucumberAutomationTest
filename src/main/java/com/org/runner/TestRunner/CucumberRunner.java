@@ -1,8 +1,8 @@
-package com.org.TestRunner;
+package com.org.runner.TestRunner;
 
 import java.util.stream.Stream;
 
-public class TestRunner{
+public class CucumberRunner{
 	
 	 private static String[] defaultOptions = {
 	            "--glue", "com/org/stepDef",

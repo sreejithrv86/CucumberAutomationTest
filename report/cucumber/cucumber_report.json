@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2022-09-21T17:06:08.386Z",
+        "start_timestamp": "2022-09-23T15:14:01.965Z",
         "before": [
           {
             "result": {
-              "duration": 6851562700,
+              "duration": 8120488300,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 4,
-        "name": "Login Functionality",
+        "line": 10,
+        "name": "User unable to sign in",
         "description": "",
-        "id": "login;login-functionality",
+        "id": "login;user-unable-to-sign-in",
         "after": [
           {
             "result": {
-              "duration": 1069022700,
+              "duration": 814014000,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 238016100,
+              "duration": 125004800,
               "status": "passed"
             },
-            "line": 5,
+            "line": 11,
             "name": "user navigates to the website javatpoint.com",
             "match": {
               "location": "com.org.stepDef.Browse.ProductListSteps.user_navigates_to_the_website_javatpoint_com()"
@@ -47,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 6025400,
+              "duration": 3001600,
               "status": "passed"
             },
-            "line": 6,
+            "line": 12,
             "name": "there user logs in through Login Window by using Username as \"SREEJITH\" and Password as \"PASSWORD\"",
             "match": {
               "arguments": [
@@ -69,10 +69,10 @@
           },
           {
             "result": {
-              "duration": 1994600,
+              "duration": 1001800,
               "status": "passed"
             },
-            "line": 7,
+            "line": 13,
             "name": "login must be successful",
             "match": {
               "location": "com.org.stepDef.Browse.ProductListSteps.login_must_be_successful()"
@@ -82,7 +82,7 @@
         ],
         "tags": [
           {
-            "name": "@TEST-0001"
+            "name": "@TEST-0002"
           }
         ]
       }
@@ -91,7 +91,7 @@
     "description": "",
     "id": "login",
     "keyword": "Feature",
-    "uri": "classpath:features/profile/Login.feature",
+    "uri": "classpath:features/Profile/Login.feature",
     "tags": []
   }
 ]
