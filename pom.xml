@@ -129,7 +129,7 @@
 					<appendAssemblyId>false</appendAssemblyId>
 					<archive>
 						<manifest>
-							<mainClass>com.org.TestRunner.TestRunner</mainClass>
+							<mainClass>com.org.runner.TestRunner.CucumberRunner</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
