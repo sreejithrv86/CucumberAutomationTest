@@ -2,6 +2,9 @@ package com.org.stepDef.Common;
 
 import java.io.File;
 import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.AfterClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import com.google.common.io.Files;
@@ -41,18 +44,16 @@ public class Hooks extends commonSteps {
 	@After
 	public void teardDown(Scenario scenario) {
 		if (scenario.isFailed()) {
-			String screenshotName = scenario.getName().replaceAll(" ", "_");
 			try {
-				File sourcePath = ((TakesScreenshot) DriverFactory.getInstance().getDriver())
-						.getScreenshotAs(OutputType.FILE);
-				File destinationPath = new File(System.getProperty("user.dir") + "/target/cucumber-reports/screenshots/"
-						+ screenshotName + ".png");
-				Files.copy(sourcePath, destinationPath);
+				File screenshot = ((TakesScreenshot)DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
+				byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
+				scenario.attach(fileContent, "image/png", "image1");
 			} catch (IOException e) {
 			}
 		}
 		DriverFactory.getInstance().clearBrowser();
 		MyLogger.endTestCase(scenario.getName());
 	}
+	
 
 }
