@@ -13,6 +13,8 @@
 		<log4j.version>1.2.17</log4j.version>
 		<junit.version>5.9.0</junit.version>
 		<ashot.version>1.5.4</ashot.version>
+		<log4j.version>2.19.0</log4j.version>
+		<slf4j.version>2.0.3</slf4j.version>
 		<aventstack.extentreport.version>3.1.5</aventstack.extentreport.version>
 		<webdrivermanager.version>5.3.0</webdrivermanager.version>
 		<cucumber.jvm.deps.version>1.0.6</cucumber.jvm.deps.version>
@@ -67,11 +69,6 @@
 			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>${cucumber.version}</version>
@@ -95,6 +92,16 @@
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>${aventstack.extentreport.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
