@@ -11,7 +11,6 @@ import com.google.common.io.Files;
 import com.org.generic.Environment.Application;
 import com.org.generic.Environment.Browser;
 import com.org.generic.Environment.Environment;
-import com.org.generic.Log.MyLogger;
 import com.org.generic.Utility.BrowserFactory;
 import com.org.generic.Utility.DriverFactory;
 import com.org.generic.Utility.FileReaderManager;
@@ -32,7 +31,6 @@ public class Hooks extends commonSteps {
 
 	@Before
 	public void tearUp(Scenario scenario) {
-		MyLogger.startTestCase(scenario.getName());
 		FileReaderManager.getInstance().setFilePropery(
 				ReadPropertyFile.getProperty(Application.getApplicationName(), Environment.getEnvironmentName()));
 		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(Browser.getBrowserName(), false));
@@ -52,7 +50,6 @@ public class Hooks extends commonSteps {
 			}
 		}
 		DriverFactory.getInstance().clearBrowser();
-		MyLogger.endTestCase(scenario.getName());
 	}
 	
 
