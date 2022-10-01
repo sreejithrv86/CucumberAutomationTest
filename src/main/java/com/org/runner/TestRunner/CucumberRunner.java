@@ -7,8 +7,9 @@ public class CucumberRunner{
 	 private static String[] defaultOptions = {
 	            "--glue", "com/org/stepDef",
 	            "--plugin", "json:report/cucumber/cucumber_report.json",
-	            "--plugin", "html:report/cucumber/cucumber_html_report.html",
+	            //"--plugin", "html:report/cucumber/cucumber_html_report.html",
 	            "--plugin", "pretty",
+	            "--plugin", "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html",
 	            "--monochrome"
 	            
 	    };

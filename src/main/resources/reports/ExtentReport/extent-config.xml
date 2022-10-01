@@ -14,7 +14,7 @@
     <documentTitle>Cucumber Framework</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>Cucumber Automation Report</reportName>
+    <reportName>Cucumber Report</reportName>
     
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>

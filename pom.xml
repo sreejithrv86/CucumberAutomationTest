@@ -15,7 +15,8 @@
 		<ashot.version>1.5.4</ashot.version>
 		<log4j.version>2.19.0</log4j.version>
 		<slf4j.version>2.0.3</slf4j.version>
-		<aventstack.extentreport.version>3.1.5</aventstack.extentreport.version>
+		<extentreport.version>3.1.0</extentreport.version>
+		<aventstack.version>5.0.9</aventstack.version>
 		<webdrivermanager.version>5.3.0</webdrivermanager.version>
 		<cucumber.jvm.deps.version>1.0.6</cucumber.jvm.deps.version>
 		<cucumber.reporting.version>5.7.2</cucumber.reporting.version>
@@ -26,8 +27,20 @@
 		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
 		<maven.assembly.plugin.version>2.4.1</maven.assembly.plugin.version>
 		<maven.jar.plugin>2.4</maven.jar.plugin>
+		<extentreports-cucumber6-adapter>2.13.0</extentreports-cucumber6-adapter>
+		<htmlreporter.version>1.0.1</htmlreporter.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber6-adapter</artifactId>
+			<version>${extentreports-cucumber6-adapter}</version>
+		</dependency>
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>htmlextentreporter</artifactId>
+			<version>${htmlreporter.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -89,9 +102,14 @@
 			<version>${ashot.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>${extentreport.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>${aventstack.extentreport.version}</version>
+			<version>${aventstack.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
