@@ -2,13 +2,8 @@ package com.org.stepDef.Common;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-
-import org.junit.AfterClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
-import com.cucumber.listener.Reporter;
 import com.google.common.io.Files;
 import com.org.generic.Environment.Application;
 import com.org.generic.Environment.Browser;
@@ -35,7 +30,6 @@ public class Hooks extends commonSteps {
 	@Before
 	public void tearUp(Scenario scenario) {
 		MyLogger.startTestCase(scenario.getName());
-		Reporter.assignAuthor(System.getProperty("user.name"));
 		FileReaderManager.getInstance().setFilePropery(
 				ReadPropertyFile.getProperty(Application.getApplicationName(), Environment.getEnvironmentName()));
 		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(Browser.getBrowserName(), false));
@@ -54,25 +48,11 @@ public class Hooks extends commonSteps {
 				File destinationPath = new File(System.getProperty("user.dir") + "/target/cucumber-reports/screenshots/"
 						+ screenshotName + ".png");
 				Files.copy(sourcePath, destinationPath);
-				Reporter.addScreenCaptureFromPath(destinationPath.toString());
 			} catch (IOException e) {
 			}
 		}
 		DriverFactory.getInstance().clearBrowser();
 		MyLogger.endTestCase(scenario.getName());
-	}
-
-	@AfterClass
-	public static void writeExtentReport() {
-		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getReportConfigPath()));
-		Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
-		Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
-		Reporter.setSystemInfo("Start Time", new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()));
-		Reporter.setSystemInfo("Machine", "Windows 10" + "64 Bit");
-		Reporter.setSystemInfo("Application Name", Application.getApplicationName());
-		Reporter.setSystemInfo("Browser Name", Browser.getBrowserName());
-		Reporter.setSystemInfo("Environment Name", Environment.getEnvironmentName());
-
 	}
 
 }
