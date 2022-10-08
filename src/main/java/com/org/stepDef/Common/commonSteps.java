@@ -18,11 +18,11 @@ public class commonSteps {
         testContext = context;
     }
 	public void setDataTable(DataTable dt) {
-		testContext.getScenarioContext().setData(Context.DATA_TABLE, dt.asMap(StoreValues.class, String.class));
+		testContext.getDataContext().setData(Context.DATA_TABLE, dt.asMap(StoreValues.class, String.class));
 		}
 	
 	public List<Map<Context, String>> getDataTable(){
-		return (List<Map<Context, String>>) testContext.getScenarioContext().getData(Context.DATA_TABLE);
+		return (List<Map<Context, String>>) testContext.getDataContext().getData(Context.DATA_TABLE);
 	}
 	
 	public Map<Context, String> getDataTable(int item){

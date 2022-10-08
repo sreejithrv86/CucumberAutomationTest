@@ -33,7 +33,7 @@ public class ProductDetailSteps extends commonSteps{
         }
 
         String actualBreadcrumbName = productDetailPage.getAllBreadcrumbName(3).toLowerCase();
-        String expectedBreadcrumbName = testContext.getScenarioContext().getData(Context.EXPECTED_DATA).toString().toLowerCase();
+        String expectedBreadcrumbName = testContext.getDataContext().getData(Context.EXPECTED_DATA).toString().toLowerCase();
         Assertions.assertTrue(actualBreadcrumbName.contains(expectedBreadcrumbName));
 
         Assertions.assertTrue(productDetailPage.moreBreadcrumbIsDisplayed());

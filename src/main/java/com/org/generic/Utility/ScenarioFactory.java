@@ -1,35 +1,32 @@
 package com.org.generic.Utility;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.openqa.selenium.WebDriver;
-
-import com.org.generic.Enums.Context;
+import io.cucumber.java.Scenario;
 
 public class ScenarioFactory {
-
+	
 	private ScenarioFactory() {
 
 	}
 
-	private static ScenarioFactory scenarioFactory = new ScenarioFactory();
+	private static ScenarioFactory instance = new ScenarioFactory();
 
 	public static ScenarioFactory getInstance() {
-		return scenarioFactory;
+		return instance;
 	}
 
-	ThreadLocal<Map<Context, Object>> scenarioContext = new ThreadLocal<Map<Context, Object>>();
+	ThreadLocal<Scenario> scenario = new ThreadLocal<Scenario>();
 	
-	public void setData(Context key, Object value) {
-		scenarioContext.get().put(key, value);
+	public void setScenario(Scenario scn) {
+		scenario.set(scn);
 	}
 
-	public Object getData(Context key) {
-		return scenarioContext.get().get(key);
+	public Scenario getScenario() {
+		return scenario.get();
 	}
 
-    public Boolean isContains(Context key) {
-        return scenarioContext.get().containsKey(key);
-    }
+	public void clearScenario() {
+		scenario.remove();
+		
+	}
+
 }
