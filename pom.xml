@@ -23,6 +23,8 @@
 		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
 		<maven.assembly.plugin.version>2.4.1</maven.assembly.plugin.version>
 		<maven.jar.plugin>2.4</maven.jar.plugin>
+		<extentreports-cucumber6-adapter>2.13.0</extentreports-cucumber6-adapter>
+		<extentreports>5.0.9</extentreports>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -93,13 +95,12 @@
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>5.0.9</version>
+			<version>${extentreports}</version>
 		</dependency>
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber6-adapter</artifactId>
-			<version>2.13.0</version>
-			<scope>test</scope>
+			<version>${extentreports-cucumber6-adapter}</version>
 		</dependency>
 	</dependencies>
 	<build>
