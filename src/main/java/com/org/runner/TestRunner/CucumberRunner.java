@@ -11,6 +11,7 @@ public class CucumberRunner{
 	            "--plugin", "html:target/report/cucumber/cucumber_report.html",
 	            "--plugin", "rerun:target/report/cucumber/cucumber_rerun.txt",
 	            "--plugin", "junit:target/report/cucumber/cucumber_report.xml",
+	            "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 	            "--monochrome"
 	            
 	    };
