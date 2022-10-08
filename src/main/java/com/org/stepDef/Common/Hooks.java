@@ -40,16 +40,16 @@ public class Hooks extends commonSteps {
 
 	@After
 	public void teardDown() {
-		//if (ScenarioFactory.getInstance().getScenario().isFailed()) {
+		if (ScenarioFactory.getInstance().getScenario().isFailed()) {
 			try {
-				File screenshot = ((TakesScreenshot)DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
+				File screenshot = ((TakesScreenshot) DriverFactory.getInstance().getDriver())
+						.getScreenshotAs(OutputType.FILE);
 				byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
 				ScenarioFactory.getInstance().getScenario().attach(fileContent, "image/png", "attachment");
 			} catch (IOException e) {
 			}
-	//}
+		}
 		DriverFactory.getInstance().clearBrowser();
 	}
-	
 
 }

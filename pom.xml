@@ -18,13 +18,14 @@
 		<cucumber.jvm.deps.version>1.0.6</cucumber.jvm.deps.version>
 		<cucumber.html.version>0.2.7</cucumber.html.version>
 		<maven.compiler.version>3.6.1</maven.compiler.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>16</maven.compiler.source>
+		<maven.compiler.target>16</maven.compiler.target>
 		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
 		<maven.assembly.plugin.version>2.4.1</maven.assembly.plugin.version>
 		<maven.jar.plugin>2.4</maven.jar.plugin>
 		<extentreports-cucumber6-adapter>2.13.0</extentreports-cucumber6-adapter>
 		<extentreports>5.0.9</extentreports>
+		<lombok>1.18.16</lombok>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -112,6 +113,31 @@
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
+					<fork>true</fork>
+					<compilerArgs>
+						<arg>--enable-preview</arg>
+						<arg>-Xlint:all</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+						<arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED</arg>
+					</compilerArgs>
+					<encoding>UTF-8</encoding>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok}</version>
+						</path>
+					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
 			<plugin>
