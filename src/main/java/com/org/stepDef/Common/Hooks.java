@@ -30,7 +30,7 @@ public class Hooks extends commonSteps {
 	@Before
 	public void tearUp(Scenario scenario) {
 		FileReaderManager.getInstance().setFilePropery(
-				ReadPropertyFile.getProperty(Application.getApplicationName(), Environment.getEnvironmentName()));
+				propOps.getProperty(Application.getApplicationName(), Environment.getEnvironmentName()));
 		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(Browser.getBrowserName(), false));
 		ScenarioFactory.getInstance().setScenario(scenario);
 		DriverFactory.getInstance().getDriver()
