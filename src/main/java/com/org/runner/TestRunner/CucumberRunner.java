@@ -9,6 +9,8 @@ public class CucumberRunner{
 	            "--plugin", "json:target/report/cucumber/cucumber_report.json",
 	            "--plugin", "pretty",
 	            "--plugin", "html:target/report/cucumber/cucumber_report.html",
+	            "--plugin", "rerun:target/report/cucumber/cucumber_rerun.txt",
+	            "--plugin", "junit:target/report/cucumber/cucumber_report.xml",
 	            "--monochrome"
 	            
 	    };
