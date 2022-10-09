@@ -1,6 +1,7 @@
 package com.org.stepDef.Browse;
 
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+import com.org.generic.Utility.CommonOtherFunctions;
 import com.org.generic.Utility.ScenarioFactory;
 import com.org.generic.Utility.TestContext;
 import com.org.page.Browse.ProductListPage;
@@ -13,6 +14,7 @@ import io.cucumber.java.en.Then;
 public class ProductListSteps  extends commonSteps{
 	 ProductListPage productListPage;
 	 TestContext testContext;
+	 CommonOtherFunctions comofun = new CommonOtherFunctions();
 	 
 	 public ProductListSteps(TestContext testContext) {
 		 super(testContext);
@@ -21,7 +23,7 @@ public class ProductListSteps  extends commonSteps{
 	 
 	 @Given("user navigates to the website javatpoint.com")
 		public void user_navigates_to_the_website_javatpoint_com() {
-		   ScenarioFactory.getInstance().getScenario().log("Hamilton Mazakadza");
+		 comofun.logInfoMessage("Sample Text Message");
 		   System.out.println("STEP 1"); 
 		}
 
