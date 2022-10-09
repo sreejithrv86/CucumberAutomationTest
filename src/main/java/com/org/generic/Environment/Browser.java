@@ -1,20 +1,8 @@
 package com.org.generic.Environment;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.netty.util.internal.StringUtil;
-
 public class Browser {
 	
-	public static String getBrowserName() {
+	public String getBrowserName() {
 		
 		switch (System.getProperty("browsername").toLowerCase()) {
 		case "chrome":

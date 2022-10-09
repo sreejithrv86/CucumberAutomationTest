@@ -2,7 +2,7 @@ package com.org.generic.Environment;
 
 public class Environment {
 
-	public static String getEnvironmentName() {
+	public String getEnvironmentName() {
 
 		switch (System.getProperty("envname").toLowerCase()) {
 		case "uat":

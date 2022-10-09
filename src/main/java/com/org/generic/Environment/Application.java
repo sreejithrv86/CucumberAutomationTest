@@ -2,7 +2,7 @@ package com.org.generic.Environment;
 
 public class Application {
 	
-	public static String getApplicationName() {
+	public String getApplicationName() {
 
 		switch (System.getProperty("applicationname").toLowerCase()) {
 		case "phptravels":

@@ -1,5 +1,7 @@
 package com.org.stepDef.Browse;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+import com.org.generic.Utility.ScenarioFactory;
 import com.org.generic.Utility.TestContext;
 import com.org.page.Browse.ProductListPage;
 import com.org.stepDef.Common.commonSteps;
@@ -19,6 +21,7 @@ public class ProductListSteps  extends commonSteps{
 	 
 	 @Given("user navigates to the website javatpoint.com")
 		public void user_navigates_to_the_website_javatpoint_com() {
+		   ScenarioFactory.getInstance().getScenario().log("Hamilton Mazakadza");
 		   System.out.println("STEP 1"); 
 		}
 

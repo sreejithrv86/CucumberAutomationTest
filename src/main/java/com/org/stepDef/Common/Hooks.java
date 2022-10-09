@@ -22,7 +22,10 @@ public class Hooks extends commonSteps {
 	BrowserFactory bf = new BrowserFactory();
 	ReadPropertyFile propOps = new ReadPropertyFile();
 	TestContext testContext;
-
+	Application appln = new Application();
+	Browser browser = new Browser();
+	Environment env = new Environment();
+	
 	public Hooks(TestContext testContext) {
 		super(testContext);
 	}
@@ -30,8 +33,8 @@ public class Hooks extends commonSteps {
 	@Before
 	public void tearUp(Scenario scenario) {
 		FileReaderManager.getInstance().setFilePropery(
-				propOps.getProperty(Application.getApplicationName(), Environment.getEnvironmentName()));
-		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(Browser.getBrowserName(), false));
+				propOps.getProperty(appln.getApplicationName(), env.getEnvironmentName()));
+		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(browser.getBrowserName(), false));
 		ScenarioFactory.getInstance().setScenario(scenario);
 		DriverFactory.getInstance().getDriver()
 				.get(FileReaderManager.getInstance().getPropertyValueByKey("application.url"));
