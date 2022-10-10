@@ -25,7 +25,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-public class Hooks extends commonSteps {
+public class Hooks {
 	BrowserFactory bf = new BrowserFactory();
 	ReadPropertyFile propOps = new ReadPropertyFile();
 	TestContext testContext;
@@ -33,8 +33,9 @@ public class Hooks extends commonSteps {
 	Browser browser = new Browser();
 	Environment env = new Environment();
 	Platform platform = new Platform();
-	public Hooks(TestContext testContext) {
-		super(testContext);
+	
+	public Hooks(TestContext context) {
+		this.testContext = context;
 	}
 
 	@Before
