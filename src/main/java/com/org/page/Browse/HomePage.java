@@ -34,6 +34,7 @@ public class HomePage extends CommonPage {
 
 	public HomePage(WebDriver driver) {
 		super(driver);
+		PageFactory.initElements(driver, this);
 	}
 
 	public boolean defaultHomePageIsDisplayed() {

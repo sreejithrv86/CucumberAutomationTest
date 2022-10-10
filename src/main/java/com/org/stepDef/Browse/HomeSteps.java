@@ -13,8 +13,8 @@ public class HomeSteps extends commonSteps{
     HomePage homePage;
     TestContext testContext;
 
-    public HomeSteps(TestContext testContext) {
-    	super(testContext);
+    public HomeSteps(TestContext context) {
+    	super(context);
         homePage = testContext.getPageObjectManager().getHomePage();
     }
 

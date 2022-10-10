@@ -4,9 +4,9 @@ import com.org.page.PomManager.PageObjectManager;
 
 public class TestContext {
 
-	private final PageObjectManager pageObjectManager;
-	private final DataFactory dataContext;
-	private final DriverFactory driverManager;
+	private PageObjectManager pageObjectManager;
+	private DataFactory dataContext;
+	private DriverFactory driverManager;
 
 	public TestContext() {
 		pageObjectManager = new PageObjectManager(DriverFactory.getInstance().getDriver());
