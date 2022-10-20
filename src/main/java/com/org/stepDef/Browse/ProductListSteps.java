@@ -22,9 +22,7 @@ import io.cucumber.java.en.Then;
 
 
 public class ProductListSteps  extends commonSteps{
-	 private static final int String = 0;
 	ProductListPage productListPage;
-	 TestContext testContext;
 	 CommonOtherFunctions comofun = new CommonOtherFunctions();
 	 
 	 public ProductListSteps(TestContext testContext) {
@@ -35,9 +33,10 @@ public class ProductListSteps  extends commonSteps{
 	 @Given("user navigates to the website javatpoint.com")
 		public void user_navigates_to_the_website_javatpoint_com() {
 		 comofun.logInfoMessage("Sample Text Message");
-		 DataFactory.getInstance().setData(Context.SEARCH_HEADER, "SAMPLE TEXT CONTEXT MESSAGE");
-		 DataFactory.getInstance().setData(Context.SEARCH_VALUE, "SAMPLE SEARCH CONTEXT VALUE MESSAGE");
-		 DataFactory.getInstance().setData(Context.DATA_LIST, "SAMPLE SEARCH CONTEXT VALUE MESSAGE");
+		 testContext.getDataContext().getInstance().setData(Context.SEARCH_HEADER, "SAMPLE TEXT CONTEXT MESSAGE");
+		 testContext.getDataContext().getInstance().setData(Context.SEARCH_VALUE, "SAMPLE SEARCH CONTEXT VALUE MESSAGE");
+		 testContext.getDataContext().getInstance().setData(Context.SEARCH_RESULT, "SAMPLE SEARCH RESULT CONTEXT VALUE MESSAGE");
+		 
 		 Map<String, Integer> map = new HashMap<String, Integer>();
 		 map.put("Sreejith", 12345);
 		 map.put("Arya", 54321);
@@ -55,10 +54,12 @@ public class ProductListSteps  extends commonSteps{
 		@Given("there user logs in through Login Window by using Username as {string} and Password as {string}")
 		public void there_user_logs_in_through_login_window_by_using_username_as_and_password_as(String string, String string2) {
 			   System.out.println("STEP 2");
-			   comofun.logInfoMessage((String)DataFactory.getInstance().getData(Context.SEARCH_HEADER));
-			   comofun.logInfoMessage((String)DataFactory.getInstance().getData(Context.SEARCH_VALUE));
+			   comofun.logInfoMessage((String)testContext.getDataContext().getInstance().getData(Context.SEARCH_HEADER));
+			   comofun.logInfoMessage((String)testContext.getDataContext().getInstance().getData(Context.SEARCH_VALUE));
+			   comofun.logInfoMessage((String)testContext.getDataContext().getInstance().getData(Context.SEARCH_RESULT));
 			   System.out.println(DataFactory.getInstance().getData(Context.DATA_MAP));
 			   System.out.println(DataFactory.getInstance().getData(Context.DATA_LIST));
+			   
 			   
 		    
 		}
