@@ -28,16 +28,11 @@ import io.cucumber.java.Scenario;
 public class Hooks {
 	BrowserFactory bf = new BrowserFactory();
 	ReadPropertyFile propOps = new ReadPropertyFile();
-	public TestContext testContext;
 	Application appln = new Application();
 	Browser browser = new Browser();
 	Environment env = new Environment();
 	Platform platform = new Platform();
 	
-	public Hooks() {
-        this.testContext = new TestContext();
-	}
-
 	@Before
 	public synchronized void tearUp(Scenario scenario) {
 		ScenarioFactory.getInstance().setScenario(scenario);
