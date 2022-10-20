@@ -16,10 +16,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class commonSteps {
-    private  PageObjectManager pageObjectManager;
-	private  DataFactory dataContext;
-	private  DriverFactory driverManager;
-	private TestContext testContext;
+	
+	public TestContext testContext;
     
 	public commonSteps(TestContext context) {
 		this.testContext=context;

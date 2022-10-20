@@ -28,18 +28,18 @@ import io.cucumber.java.Scenario;
 public class Hooks {
 	BrowserFactory bf = new BrowserFactory();
 	ReadPropertyFile propOps = new ReadPropertyFile();
-	TestContext testContext;
+	public TestContext testContext;
 	Application appln = new Application();
 	Browser browser = new Browser();
 	Environment env = new Environment();
 	Platform platform = new Platform();
 	
-	public Hooks(TestContext context) {
-		this.testContext = context;
+	public Hooks() {
+        this.testContext = new TestContext();
 	}
 
 	@Before
-	public void tearUp(Scenario scenario) {
+	public synchronized void tearUp(Scenario scenario) {
 		ScenarioFactory.getInstance().setScenario(scenario);
 		ExtentService.getInstance().setSystemInfo("Application Name", appln.getApplicationName().toUpperCase());
 		ExtentService.getInstance().setSystemInfo("Environment Name", env.getEnvironmentName().toUpperCase());
@@ -58,7 +58,7 @@ public class Hooks {
 	}
 
 	@After
-	public void teardDown() {
+	public synchronized void teardDown() {
 		if (ScenarioFactory.getInstance().getScenario().isFailed()) {
 			try {
 				File screenshot = ((TakesScreenshot) DriverFactory.getInstance().getDriver())
