@@ -8,10 +8,10 @@ public class FileReaderManager {
 
 	}
 
-	private static FileReaderManager instance = new FileReaderManager();
+	private static FileReaderManager instance;
 
 	public static FileReaderManager getInstance() {
-		return instance;
+		return (instance == null) ? instance = new FileReaderManager() : instance;
 	}
 
 	ThreadLocal<Properties> prop = new ThreadLocal<Properties>();

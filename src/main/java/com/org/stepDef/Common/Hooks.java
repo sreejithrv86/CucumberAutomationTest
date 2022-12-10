@@ -32,20 +32,30 @@ public class Hooks {
 	Browser browser = new Browser();
 	Environment env = new Environment();
 	Platform platform = new Platform();
-	
+	private String Application_Name = "Application Name";
+	private String Environment_Name = "Environment Name";
+	private String Browser_Name = "Browser Name";
+	private String Platform_Name = "Platform Name";
+	private String OS_Name = "OS Name";
+	private String Tester_Name = "Tester Name";
+	private String Scenario_Name = "Scenario Name";
+	private String Time_Stamp = "Time Stamp";
+
 	@Before
 	public synchronized void tearUp(Scenario scenario) {
 		ScenarioFactory.getInstance().setScenario(scenario);
-		ExtentService.getInstance().setSystemInfo("Application Name", appln.getApplicationName().toUpperCase());
-		ExtentService.getInstance().setSystemInfo("Environment Name", env.getEnvironmentName().toUpperCase());
-		ExtentService.getInstance().setSystemInfo("Browser Name", browser.getBrowserName().toUpperCase());
-		ExtentService.getInstance().setSystemInfo("Platform Name", platform.getPlatFormType().toUpperCase());
-		ExtentService.getInstance().setSystemInfo("OS Name", System.getProperty("os.name").toUpperCase());
-		ExtentService.getInstance().setSystemInfo("Tester Name", System.getProperty("user.name").toUpperCase());
-		ExtentService.getInstance().setSystemInfo("Scenario Name", ScenarioFactory.getInstance().getScenario().getName().toUpperCase());
-		ExtentService.getInstance().setSystemInfo("Time Stamp", LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
-		FileReaderManager.getInstance().setFilePropery(
-				propOps.getProperty(appln.getApplicationName(), env.getEnvironmentName()));
+		ExtentService.getInstance().setSystemInfo(Application_Name, appln.getApplicationName().toUpperCase());
+		ExtentService.getInstance().setSystemInfo(Environment_Name, env.getEnvironmentName().toUpperCase());
+		ExtentService.getInstance().setSystemInfo(Browser_Name, browser.getBrowserName().toUpperCase());
+		ExtentService.getInstance().setSystemInfo(Platform_Name, platform.getPlatFormType().toUpperCase());
+		ExtentService.getInstance().setSystemInfo(OS_Name, System.getProperty("os.name").toUpperCase());
+		ExtentService.getInstance().setSystemInfo(Tester_Name, System.getProperty("user.name").toUpperCase());
+		ExtentService.getInstance().setSystemInfo(Scenario_Name,
+				ScenarioFactory.getInstance().getScenario().getName().toUpperCase());
+		ExtentService.getInstance().setSystemInfo(Time_Stamp,
+				LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
+		FileReaderManager.getInstance()
+				.setFilePropery(propOps.getProperty(appln.getApplicationName(), env.getEnvironmentName()));
 		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(browser.getBrowserName(), false));
 		DriverFactory.getInstance().getDriver()
 				.get(FileReaderManager.getInstance().getPropertyValueByKey("application.url"));

@@ -22,6 +22,14 @@
 		<!-- timestamp format -->
 		<timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
 		
+		<!-- report name - displayed at top-nav -->
+		
+        <reportName>
+            <![CDATA[
+               <img src='.//logo.jpg' /> 
+            ]]>
+        </reportName>
+		
         <!-- custom javascript -->
         <scripts>
             <![CDATA[
@@ -32,7 +40,7 @@
         </scripts>
         
         <!-- custom styles -->
-        <styles>
+           <styles>
             <![CDATA[
                 
             ]]>
