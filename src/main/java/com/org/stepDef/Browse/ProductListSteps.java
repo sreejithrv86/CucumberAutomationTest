@@ -1,18 +1,13 @@
 package com.org.stepDef.Browse;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.collections.map.HashedMap;
-
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.org.generic.Enums.Context;
 import com.org.generic.Utility.CommonOtherFunctions;
 import com.org.generic.Utility.DataFactory;
-import com.org.generic.Utility.ScenarioFactory;
 import com.org.generic.Utility.TestContext;
 import com.org.page.Browse.ProductListPage;
 import com.org.stepDef.Common.commonSteps;
@@ -23,7 +18,6 @@ import io.cucumber.java.en.Then;
 public class ProductListSteps extends commonSteps {
 	ProductListPage productListPage;
 	CommonOtherFunctions comofun = new CommonOtherFunctions();
-
 	public ProductListSteps(TestContext testContext) {
 		super(testContext);
 		productListPage = testContext.getPageObjectManager().getProductListPage();
@@ -47,25 +41,25 @@ public class ProductListSteps extends commonSteps {
 		list.add("Radha");
 		map.put("Sriya", 67890);
 		DataFactory.getInstance().setData(Context.DATA_LIST, list);
-
-		System.out.println("STEP 1");
+		testContext.getLogManager().getInstance().getLogger().info("STEP-1!");
 	}
 
 	@Given("there user logs in through Login Window by using Username as {string} and Password as {string}")
 	public void there_user_logs_in_through_login_window_by_using_username_as_and_password_as(String string,
 			String string2) {
-		System.out.println("STEP 2");
+		
 		comofun.logInfoMessage(testContext.getDataContext().getInstance().getData(Context.SEARCH_HEADER));
 		comofun.logInfoMessage(testContext.getDataContext().getInstance().getData(Context.SEARCH_VALUE));
 		comofun.logInfoMessage(testContext.getDataContext().getInstance().getData(Context.SEARCH_RESULT));
 		comofun.logInfoMessage(testContext.getDataContext().getInstance().getData(Context.DATA_MAP));
 		comofun.logInfoMessage(testContext.getDataContext().getInstance().getData(Context.DATA_LIST));
+		testContext.getLogManager().getInstance().getLogger().info("STEP-2!");
 
 	}
 
 	@Then("login must be successful")
 	public void login_must_be_successful() {
-		System.out.println("STEP 3");
+		testContext.getLogManager().getInstance().getLogger().info("STEP-3!");
 
 	}
 
