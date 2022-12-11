@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
+import org.apache.log4j.Logger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,9 +15,11 @@ import com.org.generic.Environment.Application;
 import com.org.generic.Environment.Browser;
 import com.org.generic.Environment.Environment;
 import com.org.generic.Environment.Platform;
+import com.org.generic.Log.Log;
 import com.org.generic.Utility.BrowserFactory;
 import com.org.generic.Utility.DriverFactory;
 import com.org.generic.Utility.FileReaderManager;
+import com.org.generic.Utility.LogFactory;
 import com.org.generic.Utility.ReadPropertyFile;
 import com.org.generic.Utility.ScenarioFactory;
 import com.org.generic.Utility.TestContext;
@@ -43,6 +45,7 @@ public class Hooks {
 
 	@Before
 	public synchronized void tearUp(Scenario scenario) {
+		//Log.info("Cucumber Automation Test Starts [{0}]".replaceAll("{0}", scenario.getName()));
 		ScenarioFactory.getInstance().setScenario(scenario);
 		ExtentService.getInstance().setSystemInfo(Application_Name, appln.getApplicationName().toUpperCase());
 		ExtentService.getInstance().setSystemInfo(Environment_Name, env.getEnvironmentName().toUpperCase());
@@ -56,9 +59,12 @@ public class Hooks {
 				LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
 		FileReaderManager.getInstance()
 				.setFilePropery(propOps.getProperty(appln.getApplicationName(), env.getEnvironmentName()));
+		final Logger logger = Log.getLogData(Log.class.getName());
+		LogFactory.getInstance().setLogger(logger);
 		DriverFactory.getInstance().setDriver(bf.createBrowserInstance(browser.getBrowserName(), false));
 		DriverFactory.getInstance().getDriver()
 				.get(FileReaderManager.getInstance().getPropertyValueByKey("application.url"));
+		LogFactory.getInstance().getLogger().info("Browser is Launched!");
 
 	}
 
@@ -74,6 +80,10 @@ public class Hooks {
 			}
 		}
 		DriverFactory.getInstance().clearBrowser();
+		LogFactory.getInstance().getLogger().info("Browser is Closed!");
+		//Log.info("Cucumber Automation Test [{0}] Completes with status [{1}]"
+		//		.replaceAll("{0}", ScenarioFactory.getInstance().getScenario().getName())
+		//		.replaceAll("{1}", ScenarioFactory.getInstance().getScenario().getStatus().toString()));
 	}
 
 }
